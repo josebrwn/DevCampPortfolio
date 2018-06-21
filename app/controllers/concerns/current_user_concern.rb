@@ -1,18 +1,17 @@
 
 module CurrentUserConcern
-    extend ActiveSupport::Concern
-  
-    # if logged in current_user is type User from models/user.rb TODO rename this!
-    def current_user
-      super || guest_user # current_user || guest_user prevents the return of nil
-    end
-  
-    # if not logged in, then type is OpenStruct
-    def guest_user
-      OpenStruct.new(name: "Guest User",
-                    first_name: "Guest",
-                    last_name: "User",
-                    email: "guest@example.com"
-                    )
-    end
+  extend ActiveSupport::Concern
+
+  def current_user
+    super || guest_user
   end
+
+  def guest_user
+    guest = GuestUser.new
+    guest.name = "Guest User"
+    guest.first_name = "Guest"
+    guest.last_name = "User"
+    guest.email = "guest@example.com"
+    guest
+  end
+end
