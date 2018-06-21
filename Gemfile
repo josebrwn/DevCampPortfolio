@@ -58,4 +58,6 @@ gem 'devise', '~> 4.2'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'jquery-rails'
 
-gem 'devcamp_view_tool', git: 'https://github.com/jordanhudgens/devcamp_view_tool'
+# gem 'devcamp_view_tool', git: 'https://github.com/jordanhudgens/devcamp_view_tool'
+gem 'devcamp_view_tool', '~> 0.1.0'
+gem 'petergate', '~> 1.7'
