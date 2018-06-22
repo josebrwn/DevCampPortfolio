@@ -18,6 +18,8 @@ module ApplicationHelper
   end
 
   def copyright_generator
-    DevcampViewTool::Renderer.copyright 'Jordan Hudgens', 'All rights reserved'
+    name = "Joseph Brown"
+    msg = "All Rights Reserved"
+    "&copy; #{Time.now.year} | <b>#{name}</b> #{msg}".html_safe
   end
 end
