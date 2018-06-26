@@ -27,3 +27,7 @@
 
 # Don't save uploaded images
 /public/uploads/
+
+# I don't want to show my secrets
+/config/secrets.yml
+.env
