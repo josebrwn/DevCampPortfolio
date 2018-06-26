@@ -3,7 +3,7 @@ class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy]
   layout 'portfolio'
   access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
-    
+  
   def index
     @portfolio_items = Portfolio.by_position
   end
@@ -13,9 +13,7 @@ class PortfoliosController < ApplicationController
       Portfolio.find(value[:id]).update(position: value[:position])
     end
 
-    render body: nil # changed in rails 5.2.0, was render nothing: true
-
-
+    render nothing: true
   end
 
   def angular
@@ -24,7 +22,6 @@ class PortfoliosController < ApplicationController
 
   def new
     @portfolio_item = Portfolio.new
-    3.times { @portfolio_item.technologies.build }
   end
 
   def create
@@ -73,7 +70,7 @@ class PortfoliosController < ApplicationController
                                       :body,
                                       :main_image,
                                       :thumb_image,
-                                      technologies_attributes: [:name]
+                                      technologies_attributes: [:id, :name, :_destroy]
                                      )
   end
 
