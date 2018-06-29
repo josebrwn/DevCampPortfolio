@@ -9,22 +9,22 @@ User.create!(
 
 puts "1 Admin user created"
 
-Skill.create!(
-  title: "Rails",
-  percent_utilized: 25
-)
+# Skill.create!(
+#   title: "Rails",
+#   percent_utilized: 25
+# )
 
-Skill.create!(
-  title: "Node.js",
-  percent_utilized: 50
-)
+# Skill.create!(
+#   title: "Node.js",
+#   percent_utilized: 50
+# )
 
-Skill.create!(
-  title: "SQL",
-  percent_utilized: 100
-)
+# Skill.create!(
+#   title: "SQL",
+#   percent_utilized: 100
+# )
 
-puts "3 Skills created"
+# puts "3 Skills created"
 
 
 Topic.create!(
@@ -36,6 +36,28 @@ Topic.create!(
 )
 
 puts "2 topics"
+
+Blog.create!(
+  title: "My First Blog",
+  body: "If you are reading this, things seem to be working ok!",
+  topic_id: Topic.last.id
+)
+
+puts "1 blog created"
+
+Portfolio.create!(
+  title: "Portfolio Sample",
+  subtitle: "No, it's not Angular.",
+  body: "This site was created as a project in web development with Ruby on Rails. This post is being generated automatically at startup to test that everything is working. Does the 'angular' search work?",
+  main_image: "http://placehold.it/600x400",
+  thumb_image: "http://placehold.it/350x200"
+)
+
+puts "1 portfolio created"
+
+Portfolio.last.technologies.create!(
+  name: "Ruby on Rails"
+)
 
 
 # User.create!(
