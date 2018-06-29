@@ -6,7 +6,7 @@ module BlogsHelper
   
     class CodeRayify < Redcarpet::Render::HTML
       def block_code(code, language)
-        # byebug
+        language ||= :plaintext
         CodeRay.scan(code, language).div
       end
     end
