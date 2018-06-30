@@ -6,7 +6,8 @@ module DefaultPageContent
     end
 
     def set_page_defaults
-        @page_title = "Joseph Brown Portfolio | My Portfolio Website"
-        @seo_keywords = "Joseph Brown portfolio"
+        @page_title = "Joseph Brown CV | Portfolio"
+        @seo_keywords = "Joseph Brown portfolio CV blog"
+        @description = "This is my latest portfolio and blog site. It's written using Ruby on Rails."
     end
 end
