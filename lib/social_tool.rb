@@ -8,7 +8,11 @@ module SocialTool
         config.access_token_secret = ENV.fetch("TWITTER_ACCESS_SECRET")
       end
   
-      client.user_timeline(ENV.fetch("TWITTER_OWNER_ID").to_i, result_type: 'recent').take(6).collect do |tweet|
+      client.user_timeline(ENV.fetch("TWITTER_OWNER_ID").to_i, {
+        :include_rts => true,
+        :exclude_replies => true,
+        :count => 42 
+       }).collect do |tweet|
         "#{tweet.user.screen_name}: #{tweet.text}"
       end
     end
