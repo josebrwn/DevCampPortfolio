@@ -9,11 +9,11 @@ module SocialTool
       end
   
       client.user_timeline(ENV.fetch("TWITTER_OWNER_ID").to_i, {
-        :include_rts => true,
+        :include_rts => false,
         :exclude_replies => true,
         :count => 42 
        }).collect do |tweet|
-        "#{tweet.user.screen_name}: #{tweet.text}"
+        "#{tweet.text}"
       end
     end
   end
