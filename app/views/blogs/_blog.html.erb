@@ -6,7 +6,7 @@
 <%= render partial: 'blogs/admin_actions', locals: { blog: blog } %>
 
 <p>
-  <%= blog.body.truncate_words(25) %>
+  <%= markdown blog.body.truncate_words(25) %>
 </p>
 <hr>
 </div>
