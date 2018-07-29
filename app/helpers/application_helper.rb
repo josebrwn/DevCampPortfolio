@@ -1,5 +1,14 @@
 
 module ApplicationHelper
+  
+  def truncate s, length = 64, ellipsis = '...'
+    # s.sub! '&#39;', "\\'"
+    if s.length > length
+      s.to_s[0..length].gsub(/[^\w]\w+\s*$/, ellipsis)
+    else
+      s
+    end
+  end
 
   class CodeRayify < Redcarpet::Render::HTML
     def block_code(code, language)
