@@ -24,10 +24,12 @@
     <div class="container">
 
       <div class="row">
-
-        <%= yield %>
-
-        <%= render 'shared/blog_sidebar' %>
+        <div class="col-lg-8" >
+          <%= yield %>
+        </div>
+        <div class="col-lg-3 offset-lg-1" >
+          <%= render 'shared/blog_sidebar' %>
+        </div>
       </div>
 
       <%= render 'shared/blog_footer' %>

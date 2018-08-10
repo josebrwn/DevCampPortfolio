@@ -1,5 +1,4 @@
-
-<div class="col-sm-8 blog-main">
+<div class="blog-main">
 
   <h2><%= @blog.title %></h2>
 
@@ -16,17 +15,11 @@
   </nav>
 
   <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
-  <div class="row">
-    <div class="col-xs-11">
-      <p>
-        <%= markdown @blog.body %>
-      </p>
-    </div>
-  </div>
-
+  <%= markdown @blog.body %>
   <%= render 'comments/comment_form' %>
 
   <div id="comments" data-blog-id="<%= @blog.id %>">
     <%= render @blog.comments %>
   </div>
+  <hr>
 </div>
