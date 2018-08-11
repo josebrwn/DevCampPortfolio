@@ -47,6 +47,27 @@ blockquote p::before {
 blockquote p::after {
   content: '\201D';
 }
+
+
+.CodeRay {
+  background-color: #efefef;
+  color: #000;
+  margin-bottom: 14px;
+}
+
+.CodeRay pre {
+  margin: 0px;
+  padding: 1em;
+}
+
+
+code {
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 20px;
+}
+
 /*
  * Override Bootstrap's default container.
  */
